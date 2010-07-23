@@ -1,0 +1,53 @@
+// !$*UTF8*$!
+{
+	C3742AA411F9EBF5003D07DE /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = C3742AB111F9EBF6003D07DE /* Degas */;
+		activeTarget = C3742AAE11F9EBF6003D07DE /* Degas */;
+		codeSenseManager = C3742AA811F9EBF5003D07DE /* Code sense */;
+		executables = (
+			C3742AB111F9EBF6003D07DE /* Degas */,
+		);
+		ignoreBreakpointsInProjectsDict = {
+		};
+		userBuildSettings = {
+		};
+	};
+	C3742AA811F9EBF5003D07DE /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	C3742AAE11F9EBF6003D07DE /* Degas */ = {
+		activeExec = 0;
+		executables = (
+			C3742AB111F9EBF6003D07DE /* Degas */,
+		);
+	};
+	C3742AB111F9EBF6003D07DE /* Degas */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Degas;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+}

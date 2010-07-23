@@ -1,0 +1,250 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C36E1E5711FA0C3F009CEED3 /* Matrix4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C36E1E5511FA0C3F009CEED3 /* Matrix4.cpp */; };
+		C36E1E5811FA0C3F009CEED3 /* Matrix4.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C36E1E5611FA0C3F009CEED3 /* Matrix4.h */; };
+		C3742AB311F9EBF7003D07DE /* Degas.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3742AB211F9EBF7003D07DE /* Degas.1 */; };
+		C3742AB511F9EBF7003D07DE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3742AB411F9EBF7003D07DE /* main.cpp */; };
+		C3742AC211F9EC81003D07DE /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3742AC011F9EC81003D07DE /* Vector3.cpp */; };
+		C3742AC311F9EC81003D07DE /* Vector3.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3742AC111F9EC81003D07DE /* Vector3.h */; };
+		C3742ADB11FA064B003D07DE /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3742AD911FA064B003D07DE /* Vector4.cpp */; };
+		C3742ADC11FA064B003D07DE /* Vector4.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3742ADA11FA064B003D07DE /* Vector4.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C3742AAD11F9EBF6003D07DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				C3742AB311F9EBF7003D07DE /* Degas.1 in CopyFiles */,
+				C3742AC311F9EC81003D07DE /* Vector3.h in CopyFiles */,
+				C3742ADC11FA064B003D07DE /* Vector4.h in CopyFiles */,
+				C36E1E5811FA0C3F009CEED3 /* Matrix4.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C36E1E5511FA0C3F009CEED3 /* Matrix4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix4.cpp; sourceTree = "<group>"; wrapsLines = 0; };
+		C36E1E5611FA0C3F009CEED3 /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; wrapsLines = 0; };
+		C3742AAF11F9EBF6003D07DE /* Degas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Degas; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3742AB211F9EBF7003D07DE /* Degas.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Degas.1; sourceTree = "<group>"; };
+		C3742AB411F9EBF7003D07DE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; wrapsLines = 0; };
+		C3742AC011F9EC81003D07DE /* Vector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3.cpp; sourceTree = "<group>"; wrapsLines = 0; };
+		C3742AC111F9EC81003D07DE /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; wrapsLines = 0; };
+		C3742AD911FA064B003D07DE /* Vector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector4.cpp; sourceTree = "<group>"; wrapsLines = 0; };
+		C3742ADA11FA064B003D07DE /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; wrapsLines = 0; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3742AAC11F9EBF6003D07DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3742AA211F9EBF5003D07DE = {
+			isa = PBXGroup;
+			children = (
+				C3742AA911F9EBF6003D07DE /* Source */,
+				C3742AAA11F9EBF6003D07DE /* Documentation */,
+				C3742AB011F9EBF6003D07DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3742AA911F9EBF6003D07DE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C3742AE511FA0899003D07DE /* Matrix */,
+				C3742ABB11F9EC1B003D07DE /* Vector */,
+				C3742AB411F9EBF7003D07DE /* main.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C3742AAA11F9EBF6003D07DE /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C3742AB211F9EBF7003D07DE /* Degas.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		C3742AB011F9EBF6003D07DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3742AAF11F9EBF6003D07DE /* Degas */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3742ABB11F9EC1B003D07DE /* Vector */ = {
+			isa = PBXGroup;
+			children = (
+				C3742AD911FA064B003D07DE /* Vector4.cpp */,
+				C3742ADA11FA064B003D07DE /* Vector4.h */,
+				C3742AC011F9EC81003D07DE /* Vector3.cpp */,
+				C3742AC111F9EC81003D07DE /* Vector3.h */,
+			);
+			name = Vector;
+			sourceTree = "<group>";
+		};
+		C3742AE511FA0899003D07DE /* Matrix */ = {
+			isa = PBXGroup;
+			children = (
+				C36E1E5511FA0C3F009CEED3 /* Matrix4.cpp */,
+				C36E1E5611FA0C3F009CEED3 /* Matrix4.h */,
+			);
+			name = Matrix;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3742AAE11F9EBF6003D07DE /* Degas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3742AB811F9EBF7003D07DE /* Build configuration list for PBXNativeTarget "Degas" */;
+			buildPhases = (
+				C3742AAB11F9EBF6003D07DE /* Sources */,
+				C3742AAC11F9EBF6003D07DE /* Frameworks */,
+				C3742AAD11F9EBF6003D07DE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Degas;
+			productName = Degas;
+			productReference = C3742AAF11F9EBF6003D07DE /* Degas */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3742AA411F9EBF5003D07DE /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C3742AA711F9EBF5003D07DE /* Build configuration list for PBXProject "Degas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C3742AA211F9EBF5003D07DE;
+			productRefGroup = C3742AB011F9EBF6003D07DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3742AAE11F9EBF6003D07DE /* Degas */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3742AAB11F9EBF6003D07DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3742AB511F9EBF7003D07DE /* main.cpp in Sources */,
+				C3742AC211F9EC81003D07DE /* Vector3.cpp in Sources */,
+				C3742ADB11FA064B003D07DE /* Vector4.cpp in Sources */,
+				C36E1E5711FA0C3F009CEED3 /* Matrix4.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C3742AB611F9EBF7003D07DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C3742AB711F9EBF7003D07DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		C3742AB911F9EBF7003D07DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = Degas;
+			};
+			name = Debug;
+		};
+		C3742ABA11F9EBF7003D07DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = Degas;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3742AA711F9EBF5003D07DE /* Build configuration list for PBXProject "Degas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3742AB611F9EBF7003D07DE /* Debug */,
+				C3742AB711F9EBF7003D07DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3742AB811F9EBF7003D07DE /* Build configuration list for PBXNativeTarget "Degas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3742AB911F9EBF7003D07DE /* Debug */,
+				C3742ABA11F9EBF7003D07DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3742AA411F9EBF5003D07DE /* Project object */;
+}
