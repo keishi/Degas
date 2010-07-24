@@ -282,6 +282,14 @@ namespace Degas {
         return Matrix4(lhs) *= rhs;
     }
     
+    inline Vector4 operator*(const Matrix4& lhs, const Vector4& rhs)
+    {
+        return Vector4(lhs.m11() * rhs.x() + lhs.m12() * rhs.y() + lhs.m13() * rhs.z() + lhs.m14() * rhs.w(),
+                       lhs.m21() * rhs.x() + lhs.m22() * rhs.y() + lhs.m23() * rhs.z() + lhs.m42() * rhs.w(),
+                       lhs.m31() * rhs.x() + lhs.m32() * rhs.y() + lhs.m33() * rhs.z() + lhs.m43() * rhs.w(),
+                       lhs.m41() * rhs.x() + lhs.m42() * rhs.y() + lhs.m43() * rhs.z() + lhs.m44() * rhs.w()); 
+    }
+    
     inline Matrix4 operator*(const Matrix4& lhs, double rhs)
     {
         return Matrix4(lhs) *= rhs;

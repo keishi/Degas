@@ -9,10 +9,22 @@
 
 #include <iostream>
 
-int main (int argc, const char * argv[]) {
+#include "CuTest.h"
+#include "TestVector3.h"
+#include "TestImage.h"
 
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main (int argc, const char * argv[]) {
+    CuString *output = CuStringNew();
+    CuSuite* suite = CuSuiteNew();
+    
+    CuSuiteAddSuite(suite, getVector3TestSuite());
+    CuSuiteAddSuite(suite, getImageTestSuite());
+    
+    CuSuiteRun(suite);
+    CuSuiteSummary(suite, output);
+    CuSuiteDetails(suite, output);
+    std::cout << output->buffer;
+    
     return 0;
 }
 
