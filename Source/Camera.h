@@ -10,10 +10,22 @@
 #define Camera_h
 
 #include "Ray.h"
+#include "utils.h"
 
 namespace Degas {
     class Camera {
     public:
+        Camera()
+        : m_aspect(1.0)
+        , m_eye(0.0f, 0.0f, 0.0f)
+        , m_lookat(0.0f, 0.0f, 1.0f)
+        , m_xAxis(1.0f, 0.0f, 0.0f)
+        , m_yAxis(0.0f, 1.0f, 0.0f)
+        , m_zAxis(0.0f, 0.0f, 1.0f)
+        {
+            setFOV(deg2rad(60.0));
+        }
+        
         double aspect() const { return m_aspect; }
         void setAspect(double aspect) { m_aspect = aspect; }
         

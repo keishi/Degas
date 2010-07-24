@@ -1,5 +1,5 @@
 //
-//  math.c
+//  deg2rad.cpp
 //  Degas
 //
 //  Created by Keishi Hattori on 7/24/10.

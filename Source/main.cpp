@@ -12,6 +12,7 @@
 #include "CuTest.h"
 #include "TestVector3.h"
 #include "TestImage.h"
+#include "TestScene.h"
 
 int main (int argc, const char * argv[]) {
     CuString *output = CuStringNew();
@@ -19,6 +20,7 @@ int main (int argc, const char * argv[]) {
     
     CuSuiteAddSuite(suite, getVector3TestSuite());
     CuSuiteAddSuite(suite, getImageTestSuite());
+    CuSuiteAddSuite(suite, getSceneTestSuite());
     
     CuSuiteRun(suite);
     CuSuiteSummary(suite, output);

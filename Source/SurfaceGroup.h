@@ -20,10 +20,18 @@ namespace Degas {
         {
         }
         
-        std::vector<Surface*>& surfaces() { return m_surfaces; };
+        std::vector<Surface*>& surfaces() { return m_surfaces; }
         void addSurface(Surface* s)
         {
             m_surfaces.push_back(s);
+        }
+        void removeSurface(Surface* s)
+        {
+            std::vector<Surface*>::iterator i;
+            for (i = m_surfaces.begin(); i != m_surfaces.end(); ++i){
+                m_surfaces.erase(i);
+                return;
+            }
         }
         
         bool hit(const Ray& ray, HitInfo* hitInfo);
@@ -33,8 +41,6 @@ namespace Degas {
     private:
         std::vector<Surface*> m_surfaces;
     };
-    
-    typedef SurfaceGroup* SurfaceGroupRef;
 }
 
 #endif

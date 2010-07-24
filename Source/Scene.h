@@ -16,8 +16,15 @@
 namespace Degas {
     class Scene {
     public:
+        Scene()
+        {
+            m_rootGroup = new SurfaceGroup();
+        }
+        
         void renderGL(Camera* camera);
         void rasterize(Camera* camera, Image* image);
+        
+        SurfaceGroup* rootGroup() { return m_rootGroup; }
         
     private:
         SurfaceGroup* m_rootGroup;

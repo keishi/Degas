@@ -16,10 +16,10 @@ namespace Degas {
     public:
         Triangle(Vector3& v0, Vector3& v1, Vector3& v2);
         
-        //const Material* material() const { return m_material; }
+        const Material* material() const { return m_material; }
         bool isDoubleSided() const { return m_isDoubleSided; }
         
-        //void setMaterial(Material* material) { m_material = material; }
+        void setMaterial(Material* material) { m_material = material; }
         void setIsDoubleSided(bool b) { m_isDoubleSided = b; }
         
         bool hit(const Ray& ray, HitInfo *hitInfo);
@@ -31,7 +31,7 @@ namespace Degas {
         Vector3 m_v1;
         Vector3 m_v2;
         Vector3 m_normal;
-        //Material* m_material;
+        Material* m_material;
         bool m_isDoubleSided;
     };
     

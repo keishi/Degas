@@ -14,6 +14,7 @@
 
 #include "Matrix4.h"
 #include "Ray.h"
+#include "Material.h"
 
 namespace Degas {
     class Surface;
@@ -21,6 +22,7 @@ namespace Degas {
     typedef struct {
         Vector3 position;
         Vector3 normal;
+        Material* material;
         double distance;
         Surface* surface;
         Ray ray;

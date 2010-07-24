@@ -7,8 +7,7 @@
 //
 
 #include "Scene.h"
-
-#include "math.h"
+#include "utils.h"
 
 namespace Degas {
     void Scene::renderGL(Camera* camera)
@@ -44,5 +43,19 @@ namespace Degas {
         glDisable(GL_DEPTH_TEST);
         
         glutSwapBuffers();
+    }
+    
+    void Scene::rasterize(Camera* camera, Image* image) {
+        for (unsigned int y = 0; y < image->height(); y++) {
+            for (unsigned int x = 0; x < image->width(); x++) {
+                double xPos = (double)x / (double) image->width() - 0.5;
+                double yPos = (double)y / (double) image->height() - 0.5;
+                Ray viewRay = camera->viewRay(xPos, yPos);
+                HitInfo hitInfo;
+                if (m_rootGroup->hit(viewRay, &hitInfo)) {
+                    image->setPixelColor(x, y, hitInfo.material->color());
+                }
+            }
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Degas {
     : m_v0(v0)
     , m_v1(v1)
     , m_v2(v2)
-    //, m_material(NULL)
+    , m_material(NULL)
     , m_isDoubleSided(false)
     {
         Vector3 v02 = v2 - v0;
@@ -68,7 +68,7 @@ namespace Degas {
         }
         
         hitInfo->distance = distance;
-        //hitInfo->material = m_material;
+        hitInfo->material = m_material;
         hitInfo->normal = m_normal;
         hitInfo->position = hitPosition;
         hitInfo->ray = ray;

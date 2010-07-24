@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) */ = {isa = PBXBuildFile; fileRef = C31B44E911FA62D3002B2368 /* testImageWriteBMPFile.bmp */; };
+		C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) */ = {isa = PBXBuildFile; fileRef = C31B44E911FA62D3002B2368 /* testImageWriteBMPFile.bmp */; };
 		C31B44EE11FA6330002B2368 /* TestImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C31B44EC11FA632F002B2368 /* TestImage.cpp */; };
 		C31B44EF11FA6330002B2368 /* TestImage.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C31B44ED11FA632F002B2368 /* TestImage.h */; };
 		C31B452911FA720D002B2368 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31B452711FA720D002B2368 /* GLUT.framework */; };
 		C31B452A11FA720D002B2368 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31B452811FA720D002B2368 /* OpenGL.framework */; };
-		C32F31F711FA990A004AACB9 /* math.c in Sources */ = {isa = PBXBuildFile; fileRef = C32F31F511FA990A004AACB9 /* math.c */; };
-		C32F31F811FA990A004AACB9 /* math.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C32F31F611FA990A004AACB9 /* math.h */; };
 		C32F320D11FAA102004AACB9 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32F320B11FAA102004AACB9 /* Triangle.cpp */; };
 		C32F320E11FAA102004AACB9 /* Triangle.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C32F320C11FAA102004AACB9 /* Triangle.h */; };
 		C32F322E11FAAFAF004AACB9 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32F322C11FAAFAF004AACB9 /* TestScene.cpp */; };
@@ -45,18 +43,25 @@
 		C3B6A93E11FA4E67004CD345 /* TestVector3.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3B6A93C11FA4E67004CD345 /* TestVector3.h */; };
 		C3B6A95011FA51EE004CD345 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B6A94E11FA51EE004CD345 /* Image.cpp */; };
 		C3B6A95111FA51EE004CD345 /* Image.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3B6A94F11FA51EE004CD345 /* Image.h */; };
+		C3D0C0FC11FB443D00E537C0 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3D0C0FA11FB443D00E537C0 /* utils.cpp */; };
+		C3D0C0FD11FB443D00E537C0 /* utils.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3D0C0FB11FB443D00E537C0 /* utils.h */; };
+		C3F0090C11FB333B0084DFE1 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3F0090A11FB333B0084DFE1 /* Material.cpp */; };
+		C3F0090D11FB333B0084DFE1 /* Material.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3F0090B11FB333B0084DFE1 /* Material.h */; };
+		C3F0093F11FB403B0084DFE1 /* testSceneRasterize.bmp in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */; };
+		C3F0094411FB40E80084DFE1 /* testSceneRasterize.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) */ = {isa = PBXBuildFile; fileRef = C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C31B44E711FA61DA002B2368 /* Copy Files (0 items) (1 item) (1 item) */ = {
+		C31B44E711FA61DA002B2368 /* Copy Files (0 items) (1 item) (1 item) (1 item) */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /tmp/DegasTest/;
+			dstPath = /tmp/TestExpected/;
 			dstSubfolderSpec = 0;
 			files = (
-				C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) */,
+				C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) */,
+				C3F0094411FB40E80084DFE1 /* testSceneRasterize.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) */,
 			);
-			name = "Copy Files (0 items) (1 item) (1 item)";
+			name = "Copy Files (0 items) (1 item) (1 item) (1 item)";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C3742AAD11F9EBF6003D07DE /* Copy Files (8 items) (9 items) */ = {
@@ -80,9 +85,11 @@
 				C333209611FA84E0003A1849 /* Scene.h in Copy Files (8 items) (9 items) */,
 				C333209B11FA8E04003A1849 /* Surface.h in Copy Files (8 items) (9 items) */,
 				C33320A611FA8EE6003A1849 /* SurfaceGroup.h in Copy Files (8 items) (9 items) */,
-				C32F31F811FA990A004AACB9 /* math.h in Copy Files (8 items) (9 items) */,
 				C32F320E11FAA102004AACB9 /* Triangle.h in Copy Files (8 items) (9 items) */,
 				C32F322F11FAAFAF004AACB9 /* TestScene.h in Copy Files (8 items) (9 items) */,
+				C3F0090D11FB333B0084DFE1 /* Material.h in Copy Files (8 items) (9 items) */,
+				C3F0093F11FB403B0084DFE1 /* testSceneRasterize.bmp in Copy Files (8 items) (9 items) */,
+				C3D0C0FD11FB443D00E537C0 /* utils.h in Copy Files (8 items) (9 items) */,
 			);
 			name = "Copy Files (8 items) (9 items)";
 			runOnlyForDeploymentPostprocessing = 1;
@@ -95,8 +102,6 @@
 		C31B44ED11FA632F002B2368 /* TestImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestImage.h; sourceTree = "<group>"; };
 		C31B452711FA720D002B2368 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C31B452811FA720D002B2368 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		C32F31F511FA990A004AACB9 /* math.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = math.c; path = ../math.c; sourceTree = "<group>"; };
-		C32F31F611FA990A004AACB9 /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = math.h; path = ../math.h; sourceTree = "<group>"; };
 		C32F320B11FAA102004AACB9 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
 		C32F320C11FAA102004AACB9 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		C32F322C11FAAFAF004AACB9 /* TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestScene.cpp; sourceTree = "<group>"; };
@@ -129,6 +134,11 @@
 		C3B6A93C11FA4E67004CD345 /* TestVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVector3.h; sourceTree = "<group>"; };
 		C3B6A94E11FA51EE004CD345 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Image.cpp; sourceTree = "<group>"; };
 		C3B6A94F11FA51EE004CD345 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Image.h; sourceTree = "<group>"; };
+		C3D0C0FA11FB443D00E537C0 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cpp; path = ../utils.cpp; sourceTree = "<group>"; };
+		C3D0C0FB11FB443D00E537C0 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = ../utils.h; sourceTree = "<group>"; };
+		C3F0090A11FB333B0084DFE1 /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
+		C3F0090B11FB333B0084DFE1 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
+		C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = testSceneRasterize.bmp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +157,7 @@
 		C31B44E811FA62D3002B2368 /* TestExpected */ = {
 			isa = PBXGroup;
 			children = (
+				C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */,
 				C31B44E911FA62D3002B2368 /* testImageWriteBMPFile.bmp */,
 			);
 			path = TestExpected;
@@ -223,10 +234,11 @@
 		C3742AA911F9EBF6003D07DE /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C32F320A11FAA0EF004AACB9 /* Triangle */,
 				C3742AB411F9EBF7003D07DE /* main.cpp */,
-				C32F31F511FA990A004AACB9 /* math.c */,
-				C32F31F611FA990A004AACB9 /* math.h */,
+				C3D0C0FA11FB443D00E537C0 /* utils.cpp */,
+				C3D0C0FB11FB443D00E537C0 /* utils.h */,
+				C3F0090911FB33260084DFE1 /* Material */,
+				C32F320A11FAA0EF004AACB9 /* Triangle */,
 				C333209711FA8DCD003A1849 /* Surface */,
 				C333209211FA84CC003A1849 /* Scene */,
 				C333207F11FA7358003A1849 /* Ray */,
@@ -309,6 +321,15 @@
 			name = Image;
 			sourceTree = "<group>";
 		};
+		C3F0090911FB33260084DFE1 /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				C3F0090A11FB333B0084DFE1 /* Material.cpp */,
+				C3F0090B11FB333B0084DFE1 /* Material.h */,
+			);
+			name = Material;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -319,7 +340,7 @@
 				C3742AAB11F9EBF6003D07DE /* Sources */,
 				C3742AAC11F9EBF6003D07DE /* Frameworks */,
 				C3742AAD11F9EBF6003D07DE /* Copy Files (8 items) (9 items) */,
-				C31B44E711FA61DA002B2368 /* Copy Files (0 items) (1 item) (1 item) */,
+				C31B44E711FA61DA002B2368 /* Copy Files (0 items) (1 item) (1 item) (1 item) */,
 			);
 			buildRules = (
 			);
@@ -371,9 +392,10 @@
 				C333209511FA84E0003A1849 /* Scene.cpp in Sources */,
 				C333209A11FA8E04003A1849 /* Surface.cpp in Sources */,
 				C33320A511FA8EE6003A1849 /* SurfaceGroup.cpp in Sources */,
-				C32F31F711FA990A004AACB9 /* math.c in Sources */,
 				C32F320D11FAA102004AACB9 /* Triangle.cpp in Sources */,
 				C32F322E11FAAFAF004AACB9 /* TestScene.cpp in Sources */,
+				C3F0090C11FB333B0084DFE1 /* Material.cpp in Sources */,
+				C3D0C0FC11FB443D00E537C0 /* utils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
