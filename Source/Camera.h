@@ -18,12 +18,12 @@ namespace Degas {
         Camera()
         : m_aspect(1.0)
         , m_eye(0.0f, 0.0f, 0.0f)
-        , m_lookat(0.0f, 0.0f, 1.0f)
+        , m_lookat(0.0f, 0.0f, -1.0f)
         , m_xAxis(1.0f, 0.0f, 0.0f)
         , m_yAxis(0.0f, 1.0f, 0.0f)
         , m_zAxis(0.0f, 0.0f, 1.0f)
         {
-            setFOV(deg2rad(60.0));
+            setFOV(deg2rad(30.0));
         }
         
         double aspect() const { return m_aspect; }
@@ -33,7 +33,7 @@ namespace Degas {
         void setEye(const Vector3& pos) 
         {
             m_eye = pos;
-            m_zAxis = (m_lookat - m_eye).normalized();
+            m_zAxis = (m_eye - m_lookat).normalized();
             m_xAxis = m_yAxis.cross(m_zAxis).normalize();
         }
         
@@ -41,7 +41,7 @@ namespace Degas {
         void setLookat(const Vector3& v)
         {
             m_lookat = v;
-            m_zAxis = (m_lookat - m_eye).normalized();
+            m_zAxis = (m_eye - m_lookat).normalized();
             m_xAxis = m_yAxis.cross(m_zAxis).normalize();
         }
         

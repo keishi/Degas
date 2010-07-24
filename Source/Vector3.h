@@ -61,6 +61,8 @@ namespace Degas {
                            m_x * v.m_y - m_y * v.m_x);
         }
         
+        Vector3 operator-() const { return Vector3(-m_x, -m_y, -m_z); }
+        
         Vector3& operator+=(const Vector3& rhs)
         {
             m_x += rhs.m_x;

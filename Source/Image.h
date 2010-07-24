@@ -23,7 +23,7 @@ namespace Degas {
         Image()
         : m_width(0)
         , m_height(0)
-        , m_pixels(0)
+        , m_pixels(NULL)
         {}
         Image(unsigned int width, unsigned int height);
         virtual ~Image();
@@ -73,6 +73,8 @@ namespace Degas {
         
         void thresholdFilter(double th);
         bool equalsImage(Image* i);
+        
+        void loadGLBuffer();
         
         void loadBMPFile(const char *filename);
         void writeBMPFile(const char *filename) const;

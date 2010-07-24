@@ -10,22 +10,21 @@
 
 namespace Degas {
     
-    const float kSmallValue = -0.000001;
+    const double kSmallValue = -0.000001;
     
     Triangle::Triangle(Vector3& v0, Vector3& v1, Vector3& v2)
     : m_v0(v0)
     , m_v1(v1)
     , m_v2(v2)
     , m_material(NULL)
-    , m_isDoubleSided(false)
+    , m_isDoubleSided(true)
     {
-        Vector3 v02 = v2 - v0;
+        // clockwise
         Vector3 v01 = v1 - v0;
+        Vector3 v02 = v2 - v0;
         m_normal = v02.cross(v01).normalize();
         
-        //Vector3 min = min(min(v0, v1), v2);
-        //Vector3 max = max(max(v0, v1), v2);
-        //m_boundingBox = BoundingBox(min, max);
+        // updateBoundingBox();
     }
     
     bool Triangle::hit(const Ray& ray, HitInfo *hitInfo)
@@ -33,7 +32,6 @@ namespace Degas {
         //if (!m_boundingBox.doesHit(ray)) {
         //    return false;
         //}
-        
         float vn = ray.direction().dot(m_normal);
         bool isRightSide = vn < 0;
         if (fabs(vn) < kSmallValue)
@@ -77,14 +75,14 @@ namespace Degas {
     }
     void Triangle::drawGL()
     {
-        //GLfloat diffuseColor[] = {m_material->color().red, m_material->color().green, m_material->color().blue, 1.0};
+        //GLfloat diffuseColor[] = {m_material->color().red(), m_material->color().green(), m_material->color().blue(), 1.0};
         GLfloat diffuseColor[] = {0.0, 1.0, 0.0, 0.0};
         glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diffuseColor);
         glBegin(GL_TRIANGLES);
-        glNormal3fv((GLfloat*)&m_normal);
-        glVertex3fv((GLfloat*)&m_v0);
-        glVertex3fv((GLfloat*)&m_v1);
-        glVertex3fv((GLfloat*)&m_v2);
+        glNormal3dv((GLdouble*)&m_normal);
+        glVertex3dv((GLdouble*)&m_v0);
+        glVertex3dv((GLdouble*)&m_v1);
+        glVertex3dv((GLdouble*)&m_v2);
         glEnd();
     }
     void Triangle::applyTransformation(const Matrix4& t)

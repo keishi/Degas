@@ -10,9 +10,11 @@
 
 #include <fstream>
 #include <cassert>
+#include <OpenGL/OpenGL.h>
 
 namespace Degas {
     Image::Image(unsigned int width, unsigned int height)
+    : m_pixels(NULL)
     {
         resize(width, height);
     }
@@ -47,6 +49,11 @@ namespace Degas {
                 setPixel(i + x, j + y, image->pixelAt(i, j));
             }
         }
+    }
+    
+    void Image::loadGLBuffer()
+    {
+        glReadPixels(0, 0, m_width, m_height, GL_RGB, GL_UNSIGNED_BYTE, m_pixels);
     }
     
     static int toInt(const char* bytes) {

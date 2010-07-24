@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3120D6E11FB8D9C00816953 /* testSceneRenderGL.bmp in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3120D6D11FB8D9C00816953 /* testSceneRenderGL.bmp */; };
+		C3120D6F11FB8DAC00816953 /* testSceneRenderGL.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) */ = {isa = PBXBuildFile; fileRef = C3120D6D11FB8D9C00816953 /* testSceneRenderGL.bmp */; };
 		C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) */ = {isa = PBXBuildFile; fileRef = C31B44E911FA62D3002B2368 /* testImageWriteBMPFile.bmp */; };
 		C31B44EE11FA6330002B2368 /* TestImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C31B44EC11FA632F002B2368 /* TestImage.cpp */; };
 		C31B44EF11FA6330002B2368 /* TestImage.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C31B44ED11FA632F002B2368 /* TestImage.h */; };
@@ -59,6 +61,7 @@
 			dstSubfolderSpec = 0;
 			files = (
 				C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) */,
+				C3120D6F11FB8DAC00816953 /* testSceneRenderGL.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) */,
 				C3F0094411FB40E80084DFE1 /* testSceneRasterize.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) */,
 			);
 			name = "Copy Files (0 items) (1 item) (1 item) (1 item)";
@@ -90,6 +93,7 @@
 				C3F0090D11FB333B0084DFE1 /* Material.h in Copy Files (8 items) (9 items) */,
 				C3F0093F11FB403B0084DFE1 /* testSceneRasterize.bmp in Copy Files (8 items) (9 items) */,
 				C3D0C0FD11FB443D00E537C0 /* utils.h in Copy Files (8 items) (9 items) */,
+				C3120D6E11FB8D9C00816953 /* testSceneRenderGL.bmp in Copy Files (8 items) (9 items) */,
 			);
 			name = "Copy Files (8 items) (9 items)";
 			runOnlyForDeploymentPostprocessing = 1;
@@ -97,14 +101,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C3120D6D11FB8D9C00816953 /* testSceneRenderGL.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = testSceneRenderGL.bmp; sourceTree = "<group>"; };
 		C31B44E911FA62D3002B2368 /* testImageWriteBMPFile.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = testImageWriteBMPFile.bmp; sourceTree = "<group>"; };
 		C31B44EC11FA632F002B2368 /* TestImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestImage.cpp; sourceTree = "<group>"; };
 		C31B44ED11FA632F002B2368 /* TestImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestImage.h; sourceTree = "<group>"; };
 		C31B452711FA720D002B2368 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C31B452811FA720D002B2368 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		C32F320B11FAA102004AACB9 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		C32F320B11FAA102004AACB9 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; wrapsLines = 0; };
 		C32F320C11FAA102004AACB9 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
-		C32F322C11FAAFAF004AACB9 /* TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestScene.cpp; sourceTree = "<group>"; };
+		C32F322C11FAAFAF004AACB9 /* TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestScene.cpp; sourceTree = "<group>"; wrapsLines = 0; };
 		C32F322D11FAAFAF004AACB9 /* TestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScene.h; sourceTree = "<group>"; };
 		C333207B11FA72C3003A1849 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; wrapsLines = 0; };
 		C333207C11FA72C3003A1849 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Camera.h; sourceTree = "<group>"; };
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */,
+				C3120D6D11FB8D9C00816953 /* testSceneRenderGL.bmp */,
 				C31B44E911FA62D3002B2368 /* testImageWriteBMPFile.bmp */,
 			);
 			path = TestExpected;

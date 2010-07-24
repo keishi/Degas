@@ -8,12 +8,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Source/Image.cpp"
-         timestampString = "301678716.297904"
+         timestampString = "301698988.520206"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
-         landmarkName = "Image::loadBMPFile(const char *filename)"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
+         landmarkName = "Image::resize(unsigned int width, unsigned int height)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
