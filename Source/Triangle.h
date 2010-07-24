@@ -14,7 +14,7 @@
 namespace Degas {
     class Triangle : public Surface {
     public:
-        Triangle(Vector3& v0, Vector3& v1, Vector3& v2);
+        Triangle(Vector3& v1, Vector3& v2, Vector3& v3);
         
         const Material* material() const { return m_material; }
         bool isDoubleSided() const { return m_isDoubleSided; }
@@ -27,9 +27,9 @@ namespace Degas {
         void applyTransformation(const Matrix4& t);
         
     private:
-        Vector3 m_v0;
         Vector3 m_v1;
         Vector3 m_v2;
+        Vector3 m_v3;
         Vector3 m_normal;
         Material* m_material;
         bool m_isDoubleSided;

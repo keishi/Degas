@@ -55,13 +55,14 @@ void runTests()
 
 int main (int argc, char * argv[]) {
     
-    
+    /*
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH);
     
     glutCreateWindow(argv[0]);
     glutDisplayFunc(display);
     glutReshapeFunc(resize);
+    */
     /*
     reScene = new Scene();
     
