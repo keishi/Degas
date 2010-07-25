@@ -7,3 +7,10 @@
 //
 
 #include "Vertex.h"
+
+namespace Degas {
+    Vertex::Vertex(int index, double x, double y, double z) {
+        m_index = index;
+        m_position = Vector3(x, y, z);
+    }
+}

@@ -14,7 +14,7 @@
 namespace Degas {
     class Face {
     public:
-        Face(Vertex* v0, Vertex* v1, Vertex* v2);
+        Face(Mesh* mesh, int vertexIndex1, int vertexIndex2, int vertexIndex3);
         
         bool hasVertex(Vertex* v);
         
