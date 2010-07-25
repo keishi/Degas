@@ -10,6 +10,7 @@
 #define Face_h
 
 #include "Vertex.h"
+#include "Surface.h"
 
 namespace Degas {
     class Face {
@@ -18,6 +19,8 @@ namespace Degas {
         
         bool hasVertex(Vertex* v);
         void calculateNormal();
+        
+        Surface* createSurface(Material* material=NULL);
         
     private:
         Vertex* m_v1;

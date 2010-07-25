@@ -8,11 +8,11 @@
 
 #include "Triangle.h"
 
+#include "utils.h"
+
 namespace Degas {
     
-    const double kSmallValue = -0.000001;
-    
-    Triangle::Triangle(Vector3& v1, Vector3& v2, Vector3& v3)
+    Triangle::Triangle(const Vector3& v1, const Vector3& v2, const Vector3& v3)
     : m_v1(v1)
     , m_v2(v2)
     , m_v3(v3)

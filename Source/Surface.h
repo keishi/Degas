@@ -31,10 +31,6 @@ namespace Degas {
     
     class Surface {
     public:
-        Surface()
-        {
-        }
-        
         virtual bool hit(const Ray& ray, HitInfo* hitInfo) = 0;
         virtual void drawGL() = 0;
         virtual void applyTransformation(const Matrix4& t) = 0;

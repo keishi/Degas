@@ -11,6 +11,8 @@
 
 #include <cmath>
 
+const double kSmallValue = 0.00001;
+
 inline double rad2deg(double rad)
 {
     return (180.0 * rad / M_PI);

@@ -10,6 +10,8 @@
 
 #include <cassert>
 
+#include "SurfaceGroup.h"
+
 namespace Degas {
     Mesh::Mesh(char* filename)
     {
@@ -221,5 +223,16 @@ namespace Degas {
         }
         
         return true;
+    }
+    
+    Surface* Mesh::createSurface(Material* material)
+    {
+        SurfaceGroup* sg = new SurfaceGroup();
+        std::vector<Face*>::iterator i;
+        for (i = m_faceList.begin(); i != m_faceList.end(); ++i){
+            Face* f = *i;
+            sg->addSurface(f->createSurface(material));
+        }
+        return (Surface*)sg;
     }
 }

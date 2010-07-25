@@ -34,14 +34,16 @@ namespace Degas {
         
         int vertexCount() { return m_vertexCount; };
         int faceCount() { return m_faceCount; };
+        Material* material() { return m_material; };
+        
+        Surface* createSurface(Material* material=NULL);
         
     private:
         std::vector<Vertex*> m_vertexList;
         std::vector<Face*> m_faceList;
-        
         int m_vertexCount;
         int m_faceCount;
-        
+        Material* m_material;
     };
 }
 

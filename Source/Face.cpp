@@ -9,6 +9,8 @@
 #include "Face.h"
 
 #include "Mesh.h"
+#include "utils.h"
+#include "Triangle.h"
 
 namespace Degas {
     Face::Face(Mesh* mesh, int vertexIndex1, int vertexIndex2, int vertexIndex3)
@@ -30,5 +32,14 @@ namespace Degas {
         Vector3 v13 = p3 - p1;
         
         m_normal = v12.cross(v13).normalized();
+    }
+    
+    Surface* Face::createSurface(Material* material)
+    {
+        Triangle* t = new Triangle(m_v1->position(), m_v2->position(), m_v3->position());
+        if (material) {
+            t->setMaterial(material);
+        }
+        return (Surface*)t;
     }
 }

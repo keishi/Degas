@@ -16,10 +16,6 @@
 namespace Degas {
     class SurfaceGroup : public Surface {
     public:
-        SurfaceGroup()
-        {
-        }
-        
         std::vector<Surface*>& surfaces() { return m_surfaces; }
         void addSurface(Surface* s)
         {
@@ -29,8 +25,10 @@ namespace Degas {
         {
             std::vector<Surface*>::iterator i;
             for (i = m_surfaces.begin(); i != m_surfaces.end(); ++i){
-                m_surfaces.erase(i);
-                return;
+                if (s == *i) {
+                    m_surfaces.erase(i);
+                    return;
+                }
             }
         }
         

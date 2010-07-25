@@ -10,6 +10,7 @@
 
 #include "Scene.h"
 #include "Triangle.h"
+#include "Mesh.h"
 
 using namespace Degas;
 
@@ -30,8 +31,6 @@ void testSceneRasterize(CuTest *tc)
     Camera* camera = new Camera();
     Image* image = new Image(64, 64);
     scene->rasterize(camera, image);
-    
-    image->writeBMPFile("testSceneRasterize.bmp");
     
     Image* referenceImage = new Image(64, 64);
     referenceImage->loadBMPFile("TestExpected/testSceneRasterize.bmp");
@@ -100,10 +99,40 @@ void testSceneRenderGL(CuTest *tc)
     }
 }
 
+void testSceneRasterizeMesh(CuTest *tc)
+{
+    Scene* scene = new Scene();
+    
+    char filename[] = "TestResource/testMeshLoadPlyFile.ply";
+    Mesh *m = new Mesh(filename);
+    
+    Material* redMaterial = new Material();
+    redMaterial->setColor(kColorRed);
+    
+    Surface* ms = m->createSurface(redMaterial);
+    scene->rootGroup()->addSurface(ms);
+    
+    Camera* camera = new Camera();
+    camera->setEye(Vector3(-0.5, 3, 5));
+    
+    Image* image = new Image(64, 64);
+    scene->rasterize(camera, image);
+    image->writeBMPFile("testSceneRasterizeMesh.bmp");
+    
+    Image* referenceImage = new Image(64, 64);
+    referenceImage->loadBMPFile("TestExpected/testSceneRasterize.bmp");
+    
+    if (!(image->equalsImage(referenceImage))) {
+        image->writeBMPFile("testSceneRasterizeMesh.bmp");
+        CuAssertTrue(tc, false);
+    }
+}
+
 CuSuite* getSceneTestSuite()
 {
     CuSuite* suite = CuSuiteNew();
     SUITE_ADD_TEST(suite, testSceneRasterize);
     //SUITE_ADD_TEST(suite, testSceneRenderGL);
+    SUITE_ADD_TEST(suite, testSceneRasterizeMesh);
     return suite;
 }
