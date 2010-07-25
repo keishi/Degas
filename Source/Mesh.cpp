@@ -11,6 +11,13 @@
 #include <cassert>
 
 namespace Degas {
+    Mesh::Mesh(char* filename)
+    {
+        m_vertexCount = 0;
+        m_faceCount = 0;
+        loadFromPlyFile(filename);
+    }
+    
     bool Mesh::loadFromPlyFile(char *filename)
     {
         FILE* inFile = fopen(filename, "rt");
@@ -71,18 +78,18 @@ namespace Degas {
             }
             cstringToLower(tmp);
             if (didFindElement) {
-                if (strncmp(tmp, "vertex", 6)) {
+                if (!strncmp(tmp, "vertex", 6)) {
                     break;
                 } else {
                     didFindElement = false;
                 }
             } else {
-                if (strncmp(tmp, "element", 7)) {
+                if (!strncmp(tmp, "element", 7)) {
                     didFindElement = true;
                 }
             }
         }
-        fscanf(inFile, "%d", &vertexCount); 
+        fscanf(inFile, "%d", &vertexCount);
         if (feof(inFile)) {
             std::cerr << "Reached EOF and \"element face\" not found.";
             return false;
@@ -90,7 +97,7 @@ namespace Degas {
         return true;
     }
     
-    bool Mesh::readPlyFaceCount(FILE *&inFile, int& vertexCount)
+    bool Mesh::readPlyFaceCount(FILE *&inFile, int& faceCount)
     {
         char tmp[1024];
         bool didFindElement = false;
@@ -102,18 +109,18 @@ namespace Degas {
             }
             cstringToLower(tmp);
             if (didFindElement) {
-                if (strncmp(tmp, "face", 6)) {
+                if (!strncmp(tmp, "face", 4)) {
                     break;
                 } else {
                     didFindElement = false;
                 }
             } else {
-                if (strncmp(tmp, "element", 7)) {
+                if (!strncmp(tmp, "element", 7)) {
                     didFindElement = true;
                 }
             }
         }
-        fscanf(inFile, "%d", &vertexCount); 
+        fscanf(inFile, "%d", &faceCount); 
         if (feof(inFile)) {
             std::cerr << "Reached EOF and vertex list not found.";
             return false;
@@ -142,11 +149,11 @@ namespace Degas {
             char tmp[1024];
             
             fscanf(inFile, "%s", tmp);
-            float x = atof(tmp); 
+            float x = atof(tmp);
             fscanf(inFile, "%s", tmp);
-            float y = atof(tmp); 
+            float y = atof(tmp);
             fscanf(inFile, "%s", tmp);
-            float z = atof(tmp); 
+            float z = atof(tmp);
             
             Vertex* v = new Vertex(i, x, y, z);
             m_vertexList.push_back(v);
@@ -165,7 +172,10 @@ namespace Degas {
     bool Mesh::readPlyFaceList(FILE *&inFile) {
         int i;
         for (i = 0; i < m_faceCount; i++) {
-            int v1, v2, v3;
+            int vertexIndex1, vertexIndex2, vertexIndex3;
+            Vertex* vertex1;
+            Vertex* vertex2;
+            Vertex* vertex3;
             int ngon;
             
             fscanf(inFile, "%d", &ngon);
@@ -174,17 +184,35 @@ namespace Degas {
                 return false;
             }
             
-            fscanf(inFile, "%d", &v1);
-            fscanf(inFile, "%d", &v2);
-            fscanf(inFile, "%d", &v3);
+            fscanf(inFile, "%d", &vertexIndex1);
+            fscanf(inFile, "%d", &vertexIndex2);
+            fscanf(inFile, "%d", &vertexIndex3);
             
-            assert(v1 < m_vertexCount && v2 < m_vertexCount && v3 < m_vertexCount);
+            assert(vertexIndex1 < m_vertexCount);
+            assert(vertexIndex2 < m_vertexCount);
+            assert(vertexIndex3 < m_vertexCount);
             
-            Face* f = new Face(this, v1, v2, v3);
+            Face* f = new Face(this, vertexIndex1, vertexIndex2, vertexIndex3);
             m_faceList.push_back(f);
             
+            vertex1 = getVertex(vertexIndex1);
+            vertex2 = getVertex(vertexIndex2);
+            vertex3 = getVertex(vertexIndex3);
+            
+            vertex1->addAdjacentFace(f);
+            vertex1->addAdjacentVertex(vertex2);
+            vertex1->addAdjacentVertex(vertex3);
+            
+            vertex2->addAdjacentFace(f);
+            vertex2->addAdjacentVertex(vertex1);
+            vertex2->addAdjacentVertex(vertex3);
+            
+            vertex3->addAdjacentFace(f);
+            vertex3->addAdjacentVertex(vertex1);
+            vertex3->addAdjacentVertex(vertex2);
+            
             if (feof(inFile)) {
-                std::cerr << "Reached EOF before all vertices found.";
+                std::cerr << "Reached EOF before all faces found.";
                 return false;
             }
             

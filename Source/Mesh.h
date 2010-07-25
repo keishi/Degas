@@ -17,6 +17,8 @@
 namespace Degas {
     class Mesh {
     public:
+        Mesh(char* filename);
+        
         bool loadFromPlyFile(char* filename);
         
         bool readPlyHeader(FILE *&inFile);
@@ -27,7 +29,11 @@ namespace Degas {
         bool readPlyFaceCount(FILE *&inFile, int& faceCount);
         bool readPlyHeaderTerminator(FILE *&inFile);
         
-        Vertex* getVertex(int index) {return m_vertexList[index];};
+        Vertex* getVertex(int index) { return m_vertexList[index]; };
+        Face* getFace(int index) { return m_faceList[index]; };
+        
+        int vertexCount() { return m_vertexCount; };
+        int faceCount() { return m_faceCount; };
         
     private:
         std::vector<Vertex*> m_vertexList;

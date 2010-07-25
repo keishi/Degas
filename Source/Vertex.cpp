@@ -13,4 +13,15 @@ namespace Degas {
         m_index = index;
         m_position = Vector3(x, y, z);
     }
+    
+    void Vertex::addAdjacentVertex(Vertex* v)
+    {
+        m_adjacentVertices.push_back(v);
+    }
+    
+    void Vertex::addAdjacentFace(Face* f)
+    {
+        m_adjacentFaces.push_back(f);
+    }
+    
 }

@@ -15,6 +15,7 @@
 #include "CuTest.h"
 #include "TestVector3.h"
 #include "TestImage.h"
+#include "TestMesh.h"
 #include "TestScene.h"
 
 
@@ -45,6 +46,7 @@ void runTests()
     
     CuSuiteAddSuite(suite, getVector3TestSuite());
     CuSuiteAddSuite(suite, getImageTestSuite());
+    CuSuiteAddSuite(suite, getMeshTestSuite());
     CuSuiteAddSuite(suite, getSceneTestSuite());
     
     CuSuiteRun(suite);

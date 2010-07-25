@@ -24,6 +24,9 @@ namespace Degas {
         int index() { return m_index; }
         void setIndex(int index) { m_index = index; }
         
+        void addAdjacentVertex(Vertex* v);
+        void addAdjacentFace(Face* f);
+        
     private:
         int m_index;
         Vector3 m_position;
