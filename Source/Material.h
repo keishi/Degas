@@ -29,29 +29,29 @@ namespace Degas {
         const Color& diffuse() const { return m_diffuse; }
         const Color& ambient() const { return m_ambient; }
         const Color& specular() const { return m_specular; }
-        float shininess() const { return m_shininess; }
-        float reflectivity() const { return m_reflectivity; }
-        float transparency() const { return m_transparency; }
-        float refractiveIndex() const { return m_refractiveIndex; }
+        double shininess() const { return m_shininess; }
+        double reflectivity() const { return m_reflectivity; }
+        double transparency() const { return m_transparency; }
+        double refractiveIndex() const { return m_refractiveIndex; }
         
         void setColor(const Color& color) { m_color = color; }
         void setDiffuse(const Color& diffuse) { m_diffuse = diffuse; }
         void setAmbient(const Color& ambient) { m_ambient = ambient; }
         void setSpecular(const Color& specular) { m_specular = specular; }
-        void setShininess(float shininess) { m_shininess = shininess; }
-        void setReflectivity(float reflectivity) { m_reflectivity = reflectivity; }
-        void setTransparency(float transparency) { m_transparency = transparency; }
-        void setRefractiveIndex(float ri) { m_refractiveIndex = ri; }
+        void setShininess(double shininess) { m_shininess = shininess; }
+        void setReflectivity(double reflectivity) { m_reflectivity = reflectivity; }
+        void setTransparency(double transparency) { m_transparency = transparency; }
+        void setRefractiveIndex(double ri) { m_refractiveIndex = ri; }
         
     private:
         Color m_color;
         Color m_diffuse;
         Color m_ambient;
         Color m_specular;
-        float m_shininess; // specular exponent
-        float m_reflectivity;
-        float m_transparency;
-        float m_refractiveIndex;
+        double m_shininess; // specular exponent
+        double m_reflectivity;
+        double m_transparency;
+        double m_refractiveIndex;
     };
 }
 

@@ -17,6 +17,7 @@ namespace Degas {
         Face(Mesh* mesh, int vertexIndex1, int vertexIndex2, int vertexIndex3);
         
         bool hasVertex(Vertex* v);
+        void calculateNormal();
         
     private:
         Vertex* m_v1;

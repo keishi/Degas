@@ -32,7 +32,7 @@ namespace Degas {
         //if (!m_boundingBox.doesHit(ray)) {
         //    return false;
         //}
-        float vn = ray.direction().dot(m_normal);
+        double vn = ray.direction().dot(m_normal);
         bool isRightSide = vn < 0;
         if (fabs(vn) < kSmallValue)
             return false;
@@ -40,8 +40,8 @@ namespace Degas {
             return false;
         }
         Vector3 v0r = ray.origin() - m_v1;
-        float xpn = m_normal.dot(v0r);
-        float distance = -xpn / vn;
+        double xpn = m_normal.dot(v0r);
+        double distance = -xpn / vn;
         if (distance < 0)
             return false;
         Vector3 hitPosition = ray.pointAtDistance(distance);
