@@ -19,11 +19,38 @@ namespace Degas {
         m_v1 = m_mesh->getVertex(vertexIndex1);
         m_v2 = m_mesh->getVertex(vertexIndex2);
         m_v3 = m_mesh->getVertex(vertexIndex3);
+        
+        Edge* e12 = m_mesh->getEdge(m_v1, m_v2);
+        e12->addSide(this);
+        Edge* e23 = m_mesh->getEdge(m_v2, m_v3);
+        e23->addSide(this);
+        Edge* e31 = m_mesh->getEdge(m_v3, m_v1);
+        e31->addSide(this);
+        
+        m_v1->addAdjacentFace(this);
+        m_v1->addAdjacentVertex(m_v2);
+        m_v1->addAdjacentVertex(m_v3);
+        m_v1->addAdjacentEdge(e12);
+        m_v1->addAdjacentEdge(e31);
+        
+        m_v2->addAdjacentFace(this);
+        m_v2->addAdjacentVertex(m_v1);
+        m_v2->addAdjacentVertex(m_v3);
+        m_v2->addAdjacentEdge(e12);
+        m_v2->addAdjacentEdge(e23);
+        
+        m_v3->addAdjacentFace(this);
+        m_v3->addAdjacentVertex(m_v1);
+        m_v3->addAdjacentVertex(m_v2);
+        m_v3->addAdjacentEdge(e23);
+        m_v3->addAdjacentEdge(e31);
+        
         calculateNormal();
     }
     
     void Face::calculateNormal()
     {
+        std::cout << m_v1->index();
         Vector3 p1 = m_v1->position();
         Vector3 p2 = m_v2->position();
         Vector3 p3 = m_v3->position();
@@ -52,5 +79,13 @@ namespace Degas {
         } else if (from == m_v3) {
             m_v3 = to;
         }
+    }
+    
+    std::ostream& operator<<(std::ostream& out, const Face& f)
+    {
+        out << "Face(";
+        out << f.normal();
+        out << ")";
+        return out;
     }
 }

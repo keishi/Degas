@@ -11,6 +11,7 @@
 #include <cassert>
 
 #include "SurfaceGroup.h"
+#include "utils.h"
 
 namespace Degas {
     Mesh::Mesh(char* filename)
@@ -175,9 +176,6 @@ namespace Degas {
         int i;
         for (i = 0; i < m_faceCount; i++) {
             int vertexIndex1, vertexIndex2, vertexIndex3;
-            Vertex* vertex1;
-            Vertex* vertex2;
-            Vertex* vertex3;
             int ngon;
             
             fscanf(inFile, "%d", &ngon);
@@ -194,24 +192,15 @@ namespace Degas {
             assert(vertexIndex2 < m_vertexCount);
             assert(vertexIndex3 < m_vertexCount);
             
+            Edge* e12 = new Edge(getVertex(vertexIndex1), getVertex(vertexIndex2));
+            m_edgeList.push_back(e12);
+            Edge* e23 = new Edge(getVertex(vertexIndex2), getVertex(vertexIndex3));
+            m_edgeList.push_back(e23);
+            Edge* e31 = new Edge(getVertex(vertexIndex3), getVertex(vertexIndex1));
+            m_edgeList.push_back(e31);
+            
             Face* f = new Face(this, vertexIndex1, vertexIndex2, vertexIndex3);
             m_faceList.push_back(f);
-            
-            vertex1 = getVertex(vertexIndex1);
-            vertex2 = getVertex(vertexIndex2);
-            vertex3 = getVertex(vertexIndex3);
-            
-            vertex1->addAdjacentFace(f);
-            vertex1->addAdjacentVertex(vertex2);
-            vertex1->addAdjacentVertex(vertex3);
-            
-            vertex2->addAdjacentFace(f);
-            vertex2->addAdjacentVertex(vertex1);
-            vertex2->addAdjacentVertex(vertex3);
-            
-            vertex3->addAdjacentFace(f);
-            vertex3->addAdjacentVertex(vertex1);
-            vertex3->addAdjacentVertex(vertex2);
             
             if (feof(inFile)) {
                 std::cerr << "Reached EOF before all faces found.";
@@ -265,8 +254,26 @@ namespace Degas {
         delete v1;
     }
     
-    void Mesh::calculateCollapseCost()
+    void Mesh::collapse(Edge* edge)
     {
+        collapse(edge->v1(), edge->v2());
+    }
+    
+    double Mesh::calculateCollapseCost(Edge* edge)
+    {
+        double curvature = 0.0;
         
+        std::vector<Face*>::iterator i;
+        for (i = edge->v1()->adjacentFaces().begin(); i != edge->v1()->adjacentFaces().end(); ++i){
+            double minCurvature = 1.0;
+            std::vector<Face*>::iterator j;
+            for (j = edge->sides().begin(); j != edge->sides().end(); ++j){
+                double dotProduct = (*i)->normal().dot((*j)->normal());
+                minCurvature = min(minCurvature, (1.0 - dotProduct) / 2.0);
+            }
+            curvature = max(curvature, minCurvature);
+        }
+        
+        return edge->length() * curvature;
     }
 }

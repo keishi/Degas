@@ -73,6 +73,7 @@ namespace Degas {
         hitInfo->surface = this;
         return true;
     }
+    
     void Triangle::drawGL()
     {
         //GLfloat diffuseColor[] = {m_material->color().red(), m_material->color().green(), m_material->color().blue(), 1.0};
@@ -85,6 +86,7 @@ namespace Degas {
         glVertex3dv((GLdouble*)&m_v3);
         glEnd();
     }
+    
     void Triangle::applyTransformation(const Matrix4& t)
     {
         //m_v1 = t.mapPoint(m_v1);

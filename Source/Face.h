@@ -24,6 +24,8 @@ namespace Degas {
         
         void changeVertex(Vertex* from, Vertex* to);
         
+        const Vector3& normal() const { return m_normal; }
+        
     private:
         Vertex* m_v1;
         Vertex* m_v2;
@@ -31,6 +33,8 @@ namespace Degas {
         Vector3 m_normal;
         Mesh* m_mesh;
     };
+    
+    std::ostream& operator<<(std::ostream& out, const Face& f);
 }
 
 

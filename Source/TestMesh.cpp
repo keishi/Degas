@@ -17,7 +17,7 @@ void testMeshLoadPlyFile(CuTest *tc)
     char filename[] = "TestResource/testMeshLoadPlyFile.ply";
     Mesh *m = new Mesh(filename);
     CuAssertIntEquals(tc, 8, m->vertexCount());
-    CuAssertIntEquals(tc, 6, m->faceCount());
+    CuAssertIntEquals(tc, 12, m->faceCount());
 }
 
 CuSuite* getMeshTestSuite()

@@ -127,11 +127,41 @@ void testSceneRasterizeMesh(CuTest *tc)
     }
 }
 
+void testSceneRasterizeEdgeCollapse(CuTest *tc)
+{
+    Scene* scene = new Scene();
+    
+    char filename[] = "TestResource/testMeshLoadPlyFile.ply";
+    Mesh *m = new Mesh(filename);
+    m->collapse(m->getEdge(0));
+    
+    Material* redMaterial = new Material();
+    redMaterial->setColor(kColorRed);
+    
+    Surface* ms = m->createSurface(redMaterial);
+    scene->rootGroup()->addSurface(ms);
+    
+    Camera* camera = new Camera();
+    camera->setEye(Vector3(-0.5, 3, 5));
+    
+    Image* image = new Image(64, 64);
+    scene->rasterize(camera, image);
+    
+    Image* referenceImage = new Image(64, 64);
+    referenceImage->loadBMPFile("TestExpected/testSceneRasterizeMesh.bmp");
+    
+    if (!(image->equalsImage(referenceImage))) {
+        image->writeBMPFile("testSceneRasterizeEdgeCollapse.bmp");
+        CuAssertTrue(tc, false);
+    }
+}
+
 CuSuite* getSceneTestSuite()
 {
     CuSuite* suite = CuSuiteNew();
     SUITE_ADD_TEST(suite, testSceneRasterize);
     //SUITE_ADD_TEST(suite, testSceneRenderGL);
     SUITE_ADD_TEST(suite, testSceneRasterizeMesh);
+    SUITE_ADD_TEST(suite, testSceneRasterizeEdgeCollapse);
     return suite;
 }

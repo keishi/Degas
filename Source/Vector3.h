@@ -29,7 +29,10 @@ namespace Degas {
         {
             setVector(x, y, z);
         }
-        Vector3(const Vector3& v) { *this = v; }
+        Vector3(const Vector3& v)
+        {
+            setVector(v.x(), v.y(), v.z());
+        }
         
         void setVector(double x, double y, double z)
         {

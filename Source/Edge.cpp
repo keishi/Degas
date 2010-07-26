@@ -15,11 +15,17 @@ namespace Degas {
         m_v1->addAdjacentEdge(this);
         m_v2 = v2;
         m_v2->addAdjacentEdge(this);
+        m_collapseCost = -1.0;
     }
     
     Edge::~Edge()
     {
         m_v1->removeAdjacentEdge(this);
         m_v2->removeAdjacentEdge(this);
+    }
+    
+    void Edge::addSide(Face* side)
+    {
+        m_sides.push_back(side); 
     }
 }

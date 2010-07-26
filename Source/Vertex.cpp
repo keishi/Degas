@@ -18,6 +18,7 @@ namespace Degas {
     Vertex::~Vertex()
     {
         m_adjacentVertices.clear();
+        m_adjacentEdges.clear();
         m_adjacentFaces.clear();
     }
     
@@ -37,6 +38,7 @@ namespace Degas {
         for (i = m_adjacentEdges.begin(); i != m_adjacentEdges.end(); ++i){
             if ((*i) == e) {
                 m_adjacentEdges.erase(i);
+                return;
             }
         }
         m_adjacentEdges.push_back(e);

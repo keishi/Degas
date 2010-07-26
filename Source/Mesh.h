@@ -12,6 +12,7 @@
 #include <vector>
 
 #include "Vertex.h"
+#include "Edge.h"
 #include "Face.h"
 
 namespace Degas {
@@ -30,6 +31,18 @@ namespace Degas {
         bool readPlyHeaderTerminator(FILE *&inFile);
         
         Vertex* getVertex(int index) { return m_vertexList[index]; };
+        Edge* getEdge(int index) { return m_edgeList[index]; };
+        Edge* getEdge(Vertex* v1, Vertex* v2)
+        {
+            std::vector<Edge*>::iterator i;
+            for (i = m_edgeList.begin(); i != m_edgeList.end(); ++i){
+                Edge* e = *i;
+                if (e->hasVertex(v1) && e->hasVertex(v2)) {
+                    return e;
+                }
+            }
+            return NULL;
+        };
         Face* getFace(int index) { return m_faceList[index]; };
         
         int vertexCount() { return m_vertexCount; };
@@ -39,11 +52,12 @@ namespace Degas {
         Surface* createSurface(Material* material=NULL);
         
         void collapse(Vertex* v1, Vertex* v2);
-        void calculateCollapseCost();
+        void collapse(Edge* edge);
+        double calculateCollapseCost(Edge* edge);
         
     private:
         std::vector<Vertex*> m_vertexList;
-        std::vector<Vertex*> m_edgeList;
+        std::vector<Edge*> m_edgeList;
         std::vector<Face*> m_faceList;
         int m_vertexCount;
         int m_faceCount;
