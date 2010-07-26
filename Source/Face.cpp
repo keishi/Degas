@@ -42,4 +42,15 @@ namespace Degas {
         }
         return (Surface*)t;
     }
+    
+    void Face::changeVertex(Vertex* from, Vertex* to)
+    {
+        if (from == m_v1) {
+            m_v1 = to;
+        } else if (from == m_v2) {
+            m_v2 = to;
+        } else if (from == m_v3) {
+            m_v3 = to;
+        }
+    }
 }

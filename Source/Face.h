@@ -22,6 +22,8 @@ namespace Degas {
         
         Surface* createSurface(Material* material=NULL);
         
+        void changeVertex(Vertex* from, Vertex* to);
+        
     private:
         Vertex* m_v1;
         Vertex* m_v2;

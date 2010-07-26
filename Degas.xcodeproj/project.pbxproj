@@ -51,6 +51,8 @@
 		C3742ADC11FA064B003D07DE /* Vector4.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3742ADA11FA064B003D07DE /* Vector4.h */; };
 		C38F921911FCEC20008457FA /* testSceneRasterizeMesh.bmp in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C38F921811FCEC20008457FA /* testSceneRasterizeMesh.bmp */; };
 		C38F921A11FCEC44008457FA /* testSceneRasterizeMesh.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */ = {isa = PBXBuildFile; fileRef = C38F921811FCEC20008457FA /* testSceneRasterizeMesh.bmp */; };
+		C3AA7CF711FDB01500FCD65C /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AA7CF511FDB01500FCD65C /* Edge.cpp */; };
+		C3AA7CF811FDB01500FCD65C /* Edge.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3AA7CF611FDB01500FCD65C /* Edge.h */; };
 		C3B6A93011FA45BE004CD345 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B6A92E11FA45BE004CD345 /* Color.cpp */; };
 		C3B6A93111FA45BE004CD345 /* Color.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3B6A92F11FA45BE004CD345 /* Color.h */; };
 		C3B6A93D11FA4E67004CD345 /* TestVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B6A93B11FA4E67004CD345 /* TestVector3.cpp */; };
@@ -123,6 +125,7 @@
 				C364F11B11FCB24E0009AC7A /* testMeshLoadPlyFile.ply in Copy Files (8 items) (9 items) */,
 				C364F11F11FCB31B0009AC7A /* TestMesh.h in Copy Files (8 items) (9 items) */,
 				C38F921911FCEC20008457FA /* testSceneRasterizeMesh.bmp in Copy Files (8 items) (9 items) */,
+				C3AA7CF811FDB01500FCD65C /* Edge.h in Copy Files (8 items) (9 items) */,
 			);
 			name = "Copy Files (8 items) (9 items)";
 			runOnlyForDeploymentPostprocessing = 1;
@@ -172,14 +175,16 @@
 		C3742AD911FA064B003D07DE /* Vector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector4.cpp; sourceTree = "<group>"; wrapsLines = 0; };
 		C3742ADA11FA064B003D07DE /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; wrapsLines = 0; };
 		C38F921811FCEC20008457FA /* testSceneRasterizeMesh.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = testSceneRasterizeMesh.bmp; sourceTree = "<group>"; };
+		C3AA7CF511FDB01500FCD65C /* Edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edge.cpp; sourceTree = "<group>"; };
+		C3AA7CF611FDB01500FCD65C /* Edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edge.h; sourceTree = "<group>"; };
 		C3B6A92E11FA45BE004CD345 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
 		C3B6A92F11FA45BE004CD345 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Color.h; sourceTree = "<group>"; };
 		C3B6A93B11FA4E67004CD345 /* TestVector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestVector3.cpp; sourceTree = "<group>"; };
 		C3B6A93C11FA4E67004CD345 /* TestVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVector3.h; sourceTree = "<group>"; };
 		C3B6A94E11FA51EE004CD345 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Image.cpp; sourceTree = "<group>"; };
 		C3B6A94F11FA51EE004CD345 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Image.h; sourceTree = "<group>"; };
-		C3D0C0FA11FB443D00E537C0 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cpp; path = ../utils.cpp; sourceTree = "<group>"; };
-		C3D0C0FB11FB443D00E537C0 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = ../utils.h; sourceTree = "<group>"; };
+		C3D0C0FA11FB443D00E537C0 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		C3D0C0FB11FB443D00E537C0 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		C3F0090A11FB333B0084DFE1 /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
 		C3F0090B11FB333B0084DFE1 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Material.h; sourceTree = "<group>"; };
 		C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = testSceneRasterize.bmp; sourceTree = "<group>"; };
@@ -201,6 +206,8 @@
 		C3120D8111FB986000816953 /* Mesh */ = {
 			isa = PBXGroup;
 			children = (
+				C3AA7CF511FDB01500FCD65C /* Edge.cpp */,
+				C3AA7CF611FDB01500FCD65C /* Edge.h */,
 				C3120D8D11FBA2B000816953 /* Mesh.cpp */,
 				C3120D8E11FBA2B000816953 /* Mesh.h */,
 				C3120D8911FBA00400816953 /* Face.cpp */,
@@ -472,6 +479,7 @@
 				C3120D8B11FBA00400816953 /* Face.cpp in Sources */,
 				C3120D8F11FBA2B000816953 /* Mesh.cpp in Sources */,
 				C364F11E11FCB31B0009AC7A /* TestMesh.cpp in Sources */,
+				C3AA7CF711FDB01500FCD65C /* Edge.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

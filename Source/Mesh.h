@@ -39,9 +39,11 @@ namespace Degas {
         Surface* createSurface(Material* material=NULL);
         
         void collapse(Vertex* v1, Vertex* v2);
+        void calculateCollapseCost();
         
     private:
         std::vector<Vertex*> m_vertexList;
+        std::vector<Vertex*> m_edgeList;
         std::vector<Face*> m_faceList;
         int m_vertexCount;
         int m_faceCount;

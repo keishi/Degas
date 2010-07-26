@@ -236,7 +236,7 @@ namespace Degas {
         return (Surface*)sg;
     }
     
-    void collapse(Vertex* v1, Vertex* v2)
+    void Mesh::collapse(Vertex* v1, Vertex* v2)
     {
         std::vector<Face*>::iterator i;
         for (i = v1->adjacentFaces().begin(); i != v1->adjacentFaces().end(); ++i){
@@ -245,5 +245,28 @@ namespace Degas {
                 delete f;
             }
         }
+        
+        Vector3 position1 = v1->position();
+        int weight1 = v1->weight();
+        Vector3 position2 = v2->position();
+        int weight2 = v2->weight();
+        
+        Vector3 newPosition = (position1 * weight1 + position2 * weight2) / (weight1 + weight2);
+        
+        v2->setPosition(newPosition);
+        v2->setWeight(v1->weight() + v2->weight());
+        
+        for (i = v1->adjacentFaces().begin(); i != v1->adjacentFaces().end(); ++i){
+            Face* f = *i;
+            f->changeVertex(v1, v2);
+            f->calculateNormal();
+        }
+        
+        delete v1;
+    }
+    
+    void Mesh::calculateCollapseCost()
+    {
+        
     }
 }
