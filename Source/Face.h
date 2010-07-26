@@ -17,7 +17,7 @@ namespace Degas {
     public:
         Face(Mesh* mesh, int vertexIndex1, int vertexIndex2, int vertexIndex3);
         
-        bool hasVertex(Vertex* v);
+        bool hasVertex(Vertex* v) { return (v == m_v1 || v == m_v2 || v == m_v3); }
         void calculateNormal();
         
         Surface* createSurface(Material* material=NULL);

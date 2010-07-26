@@ -38,6 +38,8 @@ namespace Degas {
         
         Surface* createSurface(Material* material=NULL);
         
+        void collapse(Vertex* v1, Vertex* v2);
+        
     private:
         std::vector<Vertex*> m_vertexList;
         std::vector<Face*> m_faceList;

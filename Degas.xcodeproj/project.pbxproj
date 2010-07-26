@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C3120D6E11FB8D9C00816953 /* testSceneRenderGL.bmp in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3120D6D11FB8D9C00816953 /* testSceneRenderGL.bmp */; };
-		C3120D6F11FB8DAC00816953 /* testSceneRenderGL.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) */ = {isa = PBXBuildFile; fileRef = C3120D6D11FB8D9C00816953 /* testSceneRenderGL.bmp */; };
+		C3120D6F11FB8DAC00816953 /* testSceneRenderGL.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */ = {isa = PBXBuildFile; fileRef = C3120D6D11FB8D9C00816953 /* testSceneRenderGL.bmp */; };
 		C3120D8411FB988300816953 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3120D8211FB988300816953 /* Vertex.cpp */; };
 		C3120D8511FB988300816953 /* Vertex.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3120D8311FB988300816953 /* Vertex.h */; };
 		C3120D8B11FBA00400816953 /* Face.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3120D8911FBA00400816953 /* Face.cpp */; };
 		C3120D8C11FBA00400816953 /* Face.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3120D8A11FBA00400816953 /* Face.h */; };
 		C3120D8F11FBA2B000816953 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3120D8D11FBA2B000816953 /* Mesh.cpp */; };
 		C3120D9011FBA2B000816953 /* Mesh.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3120D8E11FBA2B000816953 /* Mesh.h */; };
-		C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) */ = {isa = PBXBuildFile; fileRef = C31B44E911FA62D3002B2368 /* testImageWriteBMPFile.bmp */; };
+		C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */ = {isa = PBXBuildFile; fileRef = C31B44E911FA62D3002B2368 /* testImageWriteBMPFile.bmp */; };
 		C31B44EE11FA6330002B2368 /* TestImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C31B44EC11FA632F002B2368 /* TestImage.cpp */; };
 		C31B44EF11FA6330002B2368 /* TestImage.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C31B44ED11FA632F002B2368 /* TestImage.h */; };
 		C31B452911FA720D002B2368 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31B452711FA720D002B2368 /* GLUT.framework */; };
@@ -49,6 +49,8 @@
 		C3742AC311F9EC81003D07DE /* Vector3.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3742AC111F9EC81003D07DE /* Vector3.h */; };
 		C3742ADB11FA064B003D07DE /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3742AD911FA064B003D07DE /* Vector4.cpp */; };
 		C3742ADC11FA064B003D07DE /* Vector4.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3742ADA11FA064B003D07DE /* Vector4.h */; };
+		C38F921911FCEC20008457FA /* testSceneRasterizeMesh.bmp in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C38F921811FCEC20008457FA /* testSceneRasterizeMesh.bmp */; };
+		C38F921A11FCEC44008457FA /* testSceneRasterizeMesh.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */ = {isa = PBXBuildFile; fileRef = C38F921811FCEC20008457FA /* testSceneRasterizeMesh.bmp */; };
 		C3B6A93011FA45BE004CD345 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B6A92E11FA45BE004CD345 /* Color.cpp */; };
 		C3B6A93111FA45BE004CD345 /* Color.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3B6A92F11FA45BE004CD345 /* Color.h */; };
 		C3B6A93D11FA4E67004CD345 /* TestVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B6A93B11FA4E67004CD345 /* TestVector3.cpp */; };
@@ -60,21 +62,22 @@
 		C3F0090C11FB333B0084DFE1 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3F0090A11FB333B0084DFE1 /* Material.cpp */; };
 		C3F0090D11FB333B0084DFE1 /* Material.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3F0090B11FB333B0084DFE1 /* Material.h */; };
 		C3F0093F11FB403B0084DFE1 /* testSceneRasterize.bmp in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */; };
-		C3F0094411FB40E80084DFE1 /* testSceneRasterize.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) */ = {isa = PBXBuildFile; fileRef = C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */; };
+		C3F0094411FB40E80084DFE1 /* testSceneRasterize.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */ = {isa = PBXBuildFile; fileRef = C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C31B44E711FA61DA002B2368 /* Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) */ = {
+		C31B44E711FA61DA002B2368 /* Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /tmp/TestExpected/;
 			dstSubfolderSpec = 0;
 			files = (
-				C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) */,
-				C3120D6F11FB8DAC00816953 /* testSceneRenderGL.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) */,
-				C3F0094411FB40E80084DFE1 /* testSceneRasterize.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) */,
+				C31B44EB11FA6304002B2368 /* testImageWriteBMPFile.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */,
+				C38F921A11FCEC44008457FA /* testSceneRasterizeMesh.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */,
+				C3120D6F11FB8DAC00816953 /* testSceneRenderGL.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */,
+				C3F0094411FB40E80084DFE1 /* testSceneRasterize.bmp in Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */,
 			);
-			name = "Copy Files (0 items) (1 item) (1 item) (1 item) (3 items)";
+			name = "Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items)";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C364F12811FCB52F0009AC7A /* CopyFiles */ = {
@@ -119,6 +122,7 @@
 				C3120D9011FBA2B000816953 /* Mesh.h in Copy Files (8 items) (9 items) */,
 				C364F11B11FCB24E0009AC7A /* testMeshLoadPlyFile.ply in Copy Files (8 items) (9 items) */,
 				C364F11F11FCB31B0009AC7A /* TestMesh.h in Copy Files (8 items) (9 items) */,
+				C38F921911FCEC20008457FA /* testSceneRasterizeMesh.bmp in Copy Files (8 items) (9 items) */,
 			);
 			name = "Copy Files (8 items) (9 items)";
 			runOnlyForDeploymentPostprocessing = 1;
@@ -167,6 +171,7 @@
 		C3742AC111F9EC81003D07DE /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; wrapsLines = 0; };
 		C3742AD911FA064B003D07DE /* Vector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector4.cpp; sourceTree = "<group>"; wrapsLines = 0; };
 		C3742ADA11FA064B003D07DE /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; wrapsLines = 0; };
+		C38F921811FCEC20008457FA /* testSceneRasterizeMesh.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = testSceneRasterizeMesh.bmp; sourceTree = "<group>"; };
 		C3B6A92E11FA45BE004CD345 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
 		C3B6A92F11FA45BE004CD345 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Color.h; sourceTree = "<group>"; };
 		C3B6A93B11FA4E67004CD345 /* TestVector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestVector3.cpp; sourceTree = "<group>"; };
@@ -209,6 +214,7 @@
 		C31B44E811FA62D3002B2368 /* TestExpected */ = {
 			isa = PBXGroup;
 			children = (
+				C38F921811FCEC20008457FA /* testSceneRasterizeMesh.bmp */,
 				C3F0093E11FB403B0084DFE1 /* testSceneRasterize.bmp */,
 				C3120D6D11FB8D9C00816953 /* testSceneRenderGL.bmp */,
 				C31B44E911FA62D3002B2368 /* testImageWriteBMPFile.bmp */,
@@ -405,7 +411,7 @@
 				C3742AAB11F9EBF6003D07DE /* Sources */,
 				C3742AAC11F9EBF6003D07DE /* Frameworks */,
 				C3742AAD11F9EBF6003D07DE /* Copy Files (8 items) (9 items) */,
-				C31B44E711FA61DA002B2368 /* Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) */,
+				C31B44E711FA61DA002B2368 /* Copy Files (0 items) (1 item) (1 item) (1 item) (3 items) (3 items) */,
 				C364F12811FCB52F0009AC7A /* CopyFiles */,
 			);
 			buildRules = (

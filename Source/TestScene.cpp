@@ -117,10 +117,9 @@ void testSceneRasterizeMesh(CuTest *tc)
     
     Image* image = new Image(64, 64);
     scene->rasterize(camera, image);
-    image->writeBMPFile("testSceneRasterizeMesh.bmp");
     
     Image* referenceImage = new Image(64, 64);
-    referenceImage->loadBMPFile("TestExpected/testSceneRasterize.bmp");
+    referenceImage->loadBMPFile("TestExpected/testSceneRasterizeMesh.bmp");
     
     if (!(image->equalsImage(referenceImage))) {
         image->writeBMPFile("testSceneRasterizeMesh.bmp");

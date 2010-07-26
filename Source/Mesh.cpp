@@ -235,4 +235,15 @@ namespace Degas {
         }
         return (Surface*)sg;
     }
+    
+    void collapse(Vertex* v1, Vertex* v2)
+    {
+        std::vector<Face*>::iterator i;
+        for (i = v1->adjacentFaces().begin(); i != v1->adjacentFaces().end(); ++i){
+            Face* f = *i;
+            if (f->hasVertex(v2)) {
+                delete f;
+            }
+        }
+    }
 }
