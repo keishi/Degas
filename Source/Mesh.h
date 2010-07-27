@@ -55,6 +55,8 @@ namespace Degas {
         void collapse(Edge* edge);
         double calculateCollapseCost(Edge* edge);
         
+        void removeFace(Face* f);
+        
     private:
         std::vector<Vertex*> m_vertexList;
         std::vector<Edge*> m_edgeList;

@@ -16,6 +16,7 @@ namespace Degas {
     class Face {
     public:
         Face(Mesh* mesh, int vertexIndex1, int vertexIndex2, int vertexIndex3);
+        ~Face();
         
         bool hasVertex(Vertex* v) { return (v == m_v1 || v == m_v2 || v == m_v3); }
         void calculateNormal();

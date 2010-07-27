@@ -15,13 +15,6 @@ namespace Degas {
         m_weight = 1;
     }
     
-    Vertex::~Vertex()
-    {
-        m_adjacentVertices.clear();
-        m_adjacentEdges.clear();
-        m_adjacentFaces.clear();
-    }
-    
     void Vertex::addAdjacentVertex(Vertex* v)
     {
         m_adjacentVertices.push_back(v);
@@ -41,11 +34,21 @@ namespace Degas {
                 return;
             }
         }
-        m_adjacentEdges.push_back(e);
     }
     
     void Vertex::addAdjacentFace(Face* f)
     {
         m_adjacentFaces.push_back(f);
+    }
+    
+    void Vertex::removeAdjacentFace(Face* f)
+    {
+        std::vector<Face*>::iterator i;
+        for (i = m_adjacentFaces.begin(); i != m_adjacentFaces.end(); ++i){
+            if ((*i) == f) {
+                m_adjacentFaces.erase(i);
+                return;
+            }
+        }
     }
 }

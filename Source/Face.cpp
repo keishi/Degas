@@ -48,9 +48,15 @@ namespace Degas {
         calculateNormal();
     }
     
+    Face::~Face()
+    {
+        m_v1->removeAdjacentFace(this);
+        m_v2->removeAdjacentFace(this);
+        m_v3->removeAdjacentFace(this);
+    }
+    
     void Face::calculateNormal()
     {
-        std::cout << m_v1->index();
         Vector3 p1 = m_v1->position();
         Vector3 p2 = m_v2->position();
         Vector3 p3 = m_v3->position();

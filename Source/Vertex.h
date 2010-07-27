@@ -21,7 +21,6 @@ namespace Degas {
     class Vertex {
     public:
         Vertex(int index, double x, double y, double z);
-        virtual ~Vertex();
         
         int index() { return m_index; }
         void setIndex(int index) { m_index = index; }
@@ -34,9 +33,11 @@ namespace Degas {
         void setWeight(int weight) { m_weight = weight; }
         
         void addAdjacentVertex(Vertex* v);
+        void removeAdjacentVertex(Vertex* v);
         void addAdjacentEdge(Edge* e);
-        void addAdjacentFace(Face* f);
         void removeAdjacentEdge(Edge* e);
+        void addAdjacentFace(Face* f);
+        void removeAdjacentFace(Face* f);
         
     private:
         int m_index;

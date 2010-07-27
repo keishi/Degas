@@ -133,7 +133,8 @@ void testSceneRasterizeEdgeCollapse(CuTest *tc)
     
     char filename[] = "TestResource/testMeshLoadPlyFile.ply";
     Mesh *m = new Mesh(filename);
-    m->collapse(m->getEdge(0));
+    Edge *e = m->getEdge(0);
+    m->collapse(e);
     
     Material* redMaterial = new Material();
     redMaterial->setColor(kColorRed);
@@ -148,7 +149,7 @@ void testSceneRasterizeEdgeCollapse(CuTest *tc)
     scene->rasterize(camera, image);
     
     Image* referenceImage = new Image(64, 64);
-    referenceImage->loadBMPFile("TestExpected/testSceneRasterizeMesh.bmp");
+    referenceImage->loadBMPFile("TestExpected/testSceneRasterizeEdgeCollapse.bmp");
     
     if (!(image->equalsImage(referenceImage))) {
         image->writeBMPFile("testSceneRasterizeEdgeCollapse.bmp");

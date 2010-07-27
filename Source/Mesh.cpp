@@ -231,6 +231,7 @@ namespace Degas {
         for (i = v1->adjacentFaces().begin(); i != v1->adjacentFaces().end(); ++i){
             Face* f = *i;
             if (f->hasVertex(v2)) {
+                removeFace(f);
                 delete f;
             }
         }
@@ -250,8 +251,6 @@ namespace Degas {
             f->changeVertex(v1, v2);
             f->calculateNormal();
         }
-        
-        delete v1;
     }
     
     void Mesh::collapse(Edge* edge)
@@ -275,5 +274,16 @@ namespace Degas {
         }
         
         return edge->length() * curvature;
+    }
+    
+    void Mesh::removeFace(Face* f)
+    {
+        std::vector<Face*>::iterator i;
+        for (i = m_faceList.begin(); i != m_faceList.end(); ++i){
+            if ((*i) == f) {
+                m_faceList.erase(i);
+                return;
+            }
+        }
     }
 }
