@@ -30,20 +30,14 @@ namespace Degas {
         m_v1->addAdjacentFace(this);
         m_v1->addAdjacentVertex(m_v2);
         m_v1->addAdjacentVertex(m_v3);
-        m_v1->addAdjacentEdge(e12);
-        m_v1->addAdjacentEdge(e31);
         
         m_v2->addAdjacentFace(this);
         m_v2->addAdjacentVertex(m_v1);
         m_v2->addAdjacentVertex(m_v3);
-        m_v2->addAdjacentEdge(e12);
-        m_v2->addAdjacentEdge(e23);
         
         m_v3->addAdjacentFace(this);
         m_v3->addAdjacentVertex(m_v1);
         m_v3->addAdjacentVertex(m_v2);
-        m_v3->addAdjacentEdge(e23);
-        m_v3->addAdjacentEdge(e31);
         
         calculateNormal();
     }

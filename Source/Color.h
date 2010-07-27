@@ -72,7 +72,10 @@ namespace Degas {
         double m_blue;
     };
     
-    
+    inline Color operator+(const Color& a, const Color& b)
+    {
+        return Color(a.red() + b.red(), a.green() + b.green(), a.blue() + b.blue());
+    }
     
     std::ostream& operator<<(std::ostream& out, const Color& c);
     

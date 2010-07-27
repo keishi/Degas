@@ -8,24 +8,28 @@
 
 #include "Edge.h"
 
+#include <cassert>
+
 namespace Degas {
     Edge::Edge(Vertex* v1, Vertex* v2)
     {
+        assert(v1 != v2);
         m_v1 = v1;
-        m_v1->addAdjacentEdge(this);
         m_v2 = v2;
-        m_v2->addAdjacentEdge(this);
-        m_collapseCost = -1.0;
-    }
-    
-    Edge::~Edge()
-    {
-        m_v1->removeAdjacentEdge(this);
-        m_v2->removeAdjacentEdge(this);
+        m_collapseCost = 10000000.0;
     }
     
     void Edge::addSide(Face* side)
     {
         m_sides.push_back(side); 
+    }
+    
+    void Edge::changeVertex(Vertex* from, Vertex* to)
+    {
+        if (from == m_v1) {
+            m_v1 = to;
+        } else if (from == m_v2) {
+            m_v2 = to;
+        }
     }
 }

@@ -192,12 +192,22 @@ namespace Degas {
             assert(vertexIndex2 < m_vertexCount);
             assert(vertexIndex3 < m_vertexCount);
             
-            Edge* e12 = new Edge(getVertex(vertexIndex1), getVertex(vertexIndex2));
-            m_edgeList.push_back(e12);
-            Edge* e23 = new Edge(getVertex(vertexIndex2), getVertex(vertexIndex3));
-            m_edgeList.push_back(e23);
-            Edge* e31 = new Edge(getVertex(vertexIndex3), getVertex(vertexIndex1));
-            m_edgeList.push_back(e31);
+            
+            Edge* e12 = getEdge(vertexIndex1, vertexIndex2);
+            if (!e12) {
+                e12 = new Edge(getVertex(vertexIndex1), getVertex(vertexIndex2));
+                m_edgeList.push_back(e12);
+            }
+            Edge* e23 = getEdge(vertexIndex2, vertexIndex3);
+            if (!e23) {
+                e23 = new Edge(getVertex(vertexIndex2), getVertex(vertexIndex3));
+                m_edgeList.push_back(e23);
+            }
+            Edge* e31 = getEdge(vertexIndex3, vertexIndex1);
+            if (!e31) {
+                e31 = new Edge(getVertex(vertexIndex3), getVertex(vertexIndex1));
+                m_edgeList.push_back(e31);
+            }
             
             Face* f = new Face(this, vertexIndex1, vertexIndex2, vertexIndex3);
             m_faceList.push_back(f);
@@ -232,7 +242,7 @@ namespace Degas {
             Face* f = *i;
             if (f->hasVertex(v2)) {
                 removeFace(f);
-                delete f;
+                // delete f;
             }
         }
         
@@ -251,11 +261,38 @@ namespace Degas {
             f->changeVertex(v1, v2);
             f->calculateNormal();
         }
+        
+        std::vector<Vertex*>::iterator j;
+        for (j = v1->adjacentVertices().begin(); j != v1->adjacentVertices().end(); ++j){
+            Vertex* v = *j;
+            v->removeAdjacentVertex(v1);
+            v->addAdjacentVertex(v2);
+            Edge* e = getEdge(v1, v);
+            if (e) {
+                if (e->hasVertex(v2)) {
+                    removeEdge(e);
+                    //delete e; // FIXME: pointer being freed was not allocated
+                } else {
+                    e->changeVertex(v1, v2);
+                }
+            } else {
+                std::cerr << "missing edge" << v1->index() << "/" << v->index() << "\n";
+            }
+        }
     }
     
     void Mesh::collapse(Edge* edge)
     {
         collapse(edge->v1(), edge->v2());
+    }
+    
+    void Mesh::calculateAllCollapseCosts()
+    {
+        std::vector<Edge*>::iterator i;
+        for (i = m_edgeList.begin(); i != m_edgeList.end(); ++i){
+            double cost = calculateCollapseCost(*i);
+            (*i)->setCollapseCost(cost);
+        }
     }
     
     double Mesh::calculateCollapseCost(Edge* edge)
@@ -283,6 +320,52 @@ namespace Degas {
             if ((*i) == f) {
                 m_faceList.erase(i);
                 return;
+            }
+        }
+    }
+    
+    void Mesh::removeEdge(Edge* e)
+    {
+        std::vector<Edge*>::iterator i;
+        for (i = m_edgeList.begin(); i != m_edgeList.end(); ++i){
+            if ((*i) == e) {
+                m_edgeList.erase(i);
+                return;
+            }
+        }
+    }
+    
+    void Mesh::renderVertices(Camera* camera, Image* image)
+    {
+        // TODO: Fix
+        float planeDistance = 1.0f / tanf(camera->FOV());
+        
+        for (int i = 0; i < m_vertexList.size(); i++) {
+            Vector3 rayV = m_vertexList[i]->position() - camera->eye();
+            Vector3 rayDirection = rayV.normalized();
+            Ray ray(camera->eye(), rayDirection);
+            
+            double d = ray.direction().dot(-camera->zAxis());
+            if (d != 0.0) {
+                double distance = (planeDistance / (rayV.norm() * d)) * rayV.norm();
+                if (distance > 0.0001) {
+                    Vector3 hitPosition = ray.pointAtDistance(distance);
+                    std::cout << hitPosition << std::endl;
+                    float x = (camera->xAxis().dot(hitPosition) + 1.0f) * image->width() / 2.0f;
+                    float y = (camera->yAxis().dot(hitPosition) + 1.0f) * image->height() / 2.0f;
+                    int left = x;
+                    float leftWeight = x - left;
+                    int top = y;
+                    float topWeight = y - top;
+                    std::cout << left << "," << top << std::endl;
+                    image->setPixelColor(left, top, kColorWhite);
+                    /*
+                    image->setPixelColor(left, top, image->pixelColorAt(left, top) + Color(leftWeight * topWeight));
+                    image->setPixelColor(left + 1, top, image->pixelColorAt(left + 1, top) + Color((1.0f - leftWeight) * topWeight));
+                    image->setPixelColor(left, top + 1, image->pixelColorAt(left, top + 1) + Color(leftWeight * (1.0f - topWeight)));
+                    image->setPixelColor(left + 1, top + 1, image->pixelColorAt(left + 1, top + 1) + Color((1.0f - leftWeight) * (1.0f - topWeight)));
+                     */
+                }
             }
         }
     }

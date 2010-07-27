@@ -22,6 +22,7 @@ namespace Degas {
         void addSide(Face* side);
         void removeSide(Face* side);
         
+        void changeVertex(Vertex* from, Vertex* to);
         bool hasVertex(Vertex* v) { return m_v1 == v || m_v2 == v;}
         
         Vertex* v1() { return m_v1; }

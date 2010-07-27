@@ -61,6 +61,10 @@
 		C3B6A95111FA51EE004CD345 /* Image.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3B6A94F11FA51EE004CD345 /* Image.h */; };
 		C3C7EEDF11FE79BE00C11E1C /* testSceneRasterizeEdgeCollapse.bmp in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3C7EEDE11FE79BE00C11E1C /* testSceneRasterizeEdgeCollapse.bmp */; };
 		C3C7EEE011FE79D800C11E1C /* testSceneRasterizeEdgeCollapse.bmp in Copy TestExpected */ = {isa = PBXBuildFile; fileRef = C3C7EEDE11FE79BE00C11E1C /* testSceneRasterizeEdgeCollapse.bmp */; };
+		C3C7EF1011FEB05000C11E1C /* StructuredMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3C7EF0E11FEB04F00C11E1C /* StructuredMesh.cpp */; };
+		C3C7EF1111FEB05000C11E1C /* StructuredMesh.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3C7EF0F11FEB05000C11E1C /* StructuredMesh.h */; };
+		C3C7EF2711FEBD8800C11E1C /* testStructuredMesh.ply in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3C7EF2611FEBD8800C11E1C /* testStructuredMesh.ply */; };
+		C3C7EF2C11FEC0DE00C11E1C /* testStructuredMesh.ply in Copy TestResource */ = {isa = PBXBuildFile; fileRef = C3C7EF2611FEBD8800C11E1C /* testStructuredMesh.ply */; };
 		C3D0C0FC11FB443D00E537C0 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3D0C0FA11FB443D00E537C0 /* utils.cpp */; };
 		C3D0C0FD11FB443D00E537C0 /* utils.h in Copy Files (8 items) (9 items) */ = {isa = PBXBuildFile; fileRef = C3D0C0FB11FB443D00E537C0 /* utils.h */; };
 		C3F0090C11FB333B0084DFE1 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3F0090A11FB333B0084DFE1 /* Material.cpp */; };
@@ -92,6 +96,7 @@
 			dstSubfolderSpec = 0;
 			files = (
 				C364F12911FCB53C0009AC7A /* testMeshLoadPlyFile.ply in Copy TestResource */,
+				C3C7EF2C11FEC0DE00C11E1C /* testStructuredMesh.ply in Copy TestResource */,
 			);
 			name = "Copy TestResource";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +136,8 @@
 				C38F921911FCEC20008457FA /* testSceneRasterizeMesh.bmp in Copy Files (8 items) (9 items) */,
 				C3AA7CF811FDB01500FCD65C /* Edge.h in Copy Files (8 items) (9 items) */,
 				C3C7EEDF11FE79BE00C11E1C /* testSceneRasterizeEdgeCollapse.bmp in Copy Files (8 items) (9 items) */,
+				C3C7EF1111FEB05000C11E1C /* StructuredMesh.h in Copy Files (8 items) (9 items) */,
+				C3C7EF2711FEBD8800C11E1C /* testStructuredMesh.ply in Copy Files (8 items) (9 items) */,
 			);
 			name = "Copy Files (8 items) (9 items)";
 			runOnlyForDeploymentPostprocessing = 1;
@@ -189,6 +196,9 @@
 		C3B6A94E11FA51EE004CD345 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Image.cpp; sourceTree = "<group>"; };
 		C3B6A94F11FA51EE004CD345 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Image.h; sourceTree = "<group>"; };
 		C3C7EEDE11FE79BE00C11E1C /* testSceneRasterizeEdgeCollapse.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = testSceneRasterizeEdgeCollapse.bmp; sourceTree = "<group>"; };
+		C3C7EF0E11FEB04F00C11E1C /* StructuredMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StructuredMesh.cpp; sourceTree = "<group>"; };
+		C3C7EF0F11FEB05000C11E1C /* StructuredMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructuredMesh.h; sourceTree = "<group>"; };
+		C3C7EF2611FEBD8800C11E1C /* testStructuredMesh.ply */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testStructuredMesh.ply; sourceTree = "<group>"; };
 		C3D0C0FA11FB443D00E537C0 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
 		C3D0C0FB11FB443D00E537C0 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		C3F0090A11FB333B0084DFE1 /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
@@ -212,6 +222,8 @@
 		C3120D8111FB986000816953 /* Mesh */ = {
 			isa = PBXGroup;
 			children = (
+				C3C7EF0E11FEB04F00C11E1C /* StructuredMesh.cpp */,
+				C3C7EF0F11FEB05000C11E1C /* StructuredMesh.h */,
 				C3AA7CF511FDB01500FCD65C /* Edge.cpp */,
 				C3AA7CF611FDB01500FCD65C /* Edge.h */,
 				C3120D8D11FBA2B000816953 /* Mesh.cpp */,
@@ -286,6 +298,7 @@
 		C364F11911FCB22A0009AC7A /* TestResource */ = {
 			isa = PBXGroup;
 			children = (
+				C3C7EF2611FEBD8800C11E1C /* testStructuredMesh.ply */,
 				C364F11A11FCB24E0009AC7A /* testMeshLoadPlyFile.ply */,
 			);
 			name = TestResource;
@@ -487,6 +500,7 @@
 				C3120D8F11FBA2B000816953 /* Mesh.cpp in Sources */,
 				C364F11E11FCB31B0009AC7A /* TestMesh.cpp in Sources */,
 				C3AA7CF711FDB01500FCD65C /* Edge.cpp in Sources */,
+				C3C7EF1011FEB05000C11E1C /* StructuredMesh.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

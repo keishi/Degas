@@ -15,24 +15,20 @@ namespace Degas {
         m_weight = 1;
     }
     
+    bool Vertex::isAdjactentTo(Vertex* v)
+    {
+        std::vector<Vertex*>::iterator i;
+        for (i = m_adjacentVertices.begin(); i != m_adjacentVertices.end(); ++i){
+            if ((*i) == v) {
+                return true;
+            }
+        }
+    }
+    
     void Vertex::addAdjacentVertex(Vertex* v)
     {
-        m_adjacentVertices.push_back(v);
-    }
-    
-    void Vertex::addAdjacentEdge(Edge* e)
-    {
-        m_adjacentEdges.push_back(e);
-    }
-    
-    void Vertex::removeAdjacentEdge(Edge* e)
-    {
-        std::vector<Edge*>::iterator i;
-        for (i = m_adjacentEdges.begin(); i != m_adjacentEdges.end(); ++i){
-            if ((*i) == e) {
-                m_adjacentEdges.erase(i);
-                return;
-            }
+        if (!isAdjactentTo(v)) {
+            m_adjacentVertices.push_back(v);
         }
     }
     
@@ -47,6 +43,17 @@ namespace Degas {
         for (i = m_adjacentFaces.begin(); i != m_adjacentFaces.end(); ++i){
             if ((*i) == f) {
                 m_adjacentFaces.erase(i);
+                return;
+            }
+        }
+    }
+    
+    void Vertex::removeAdjacentVertex(Vertex* v)
+    {
+        std::vector<Vertex*>::iterator i;
+        for (i = m_adjacentVertices.begin(); i != m_adjacentVertices.end(); ++i){
+            if ((*i) == v) {
+                m_adjacentVertices.erase(i);
                 return;
             }
         }

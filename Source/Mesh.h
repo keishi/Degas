@@ -14,6 +14,8 @@
 #include "Vertex.h"
 #include "Edge.h"
 #include "Face.h"
+#include "Camera.h"
+#include "Image.h"
 
 namespace Degas {
     class Mesh {
@@ -43,6 +45,10 @@ namespace Degas {
             }
             return NULL;
         };
+        Edge* getEdge(int vi1, int vi2)
+        {
+            return getEdge(getVertex(vi1), getVertex(vi2));
+        };
         Face* getFace(int index) { return m_faceList[index]; };
         
         int vertexCount() { return m_vertexCount; };
@@ -54,8 +60,12 @@ namespace Degas {
         void collapse(Vertex* v1, Vertex* v2);
         void collapse(Edge* edge);
         double calculateCollapseCost(Edge* edge);
+        void calculateAllCollapseCosts();
         
+        void removeEdge(Edge* e);
         void removeFace(Face* f);
+        
+        void renderVertices(Camera* camera, Image* image);
         
     private:
         std::vector<Vertex*> m_vertexList;
